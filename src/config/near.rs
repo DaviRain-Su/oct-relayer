@@ -1,30 +1,4 @@
-//! OctRelayer Config
-//!
-//! See instructions in `commands.rs` to specify the path to your
-//! application's configuration file and/or command-line options
-//! for specifying it.
-
 use serde::{Deserialize, Serialize};
-
-/// OctRelayer Configuration
-#[derive(Clone, Debug, Deserialize, Serialize)]
-#[serde(deny_unknown_fields)]
-pub struct OctRelayerConfig {
-    /// An example configuration section
-    pub near: NearConfig,
-    ///
-    pub appchian: AppChianConfig,
-}
-
-/// Default configuration settings.
-///
-/// Note: if your needs are as simple as below, you can
-/// use `#[derive(Default)]` on OctRelayerConfig instead.
-impl Default for OctRelayerConfig {
-    fn default() -> Self {
-        todo!()
-    }
-}
 
 /// Example configuration section.
 ///
@@ -42,6 +16,13 @@ pub struct NearConfig {
     /// relayer near account config
     pub relayer_near_account: RelayerNearAccount,
 }
+
+impl Default for NearConfig {
+    fn default() -> Self {
+        todo!()
+    }
+}
+
 
 /// near settings
 #[derive(Clone, Debug, Deserialize, Serialize)]
@@ -95,20 +76,3 @@ pub struct  RelayerNearAccount {
     pub private_key: String,
 }
 
-///
-#[derive(Clone, Debug, Deserialize, Serialize)]
-#[serde(deny_unknown_fields)]
-pub struct AppChianConfig {
-    /// appchain id
-    pub appchain_id: String,
-    /// start block height
-    pub start_block_height: u64,
-    ///
-    pub update_start_min_interval: u64,
-}
-
-impl Default for NearConfig {
-    fn default() -> Self {
-        todo!()
-    }
-}
