@@ -1,8 +1,8 @@
 //! interface module
-//! 
-use sp_runtime::Digest;
-use sp_core::H256;
+//!
 use binary_merkle_tree::MerkleProof;
+use sp_core::H256;
+use sp_runtime::Digest;
 
 // type hash
 type Hash = H256;
@@ -54,7 +54,6 @@ pub struct Proof {
     ///
     pub items: Vec<usize>,
 }
-
 
 ///
 #[derive(Debug)]

@@ -23,7 +23,6 @@ impl Default for NearConfig {
     }
 }
 
-
 /// near settings
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(deny_unknown_fields)]
@@ -69,10 +68,9 @@ pub struct AppchainSetting {
 ///
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(deny_unknown_fields)]
-pub struct  RelayerNearAccount {
+pub struct RelayerNearAccount {
     ///
     pub id: String,
     ///
     pub private_key: String,
 }
-

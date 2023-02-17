@@ -75,10 +75,7 @@ impl Configurable<OctRelayerConfig> for EntryPoint {
     ///
     /// This can be safely deleted if you don't want to override config
     /// settings from command-line options.
-    fn process_config(
-        &self,
-        config: OctRelayerConfig,
-    ) -> Result<OctRelayerConfig, FrameworkError> {
+    fn process_config(&self, config: OctRelayerConfig) -> Result<OctRelayerConfig, FrameworkError> {
         match &self.cmd {
             OctRelayerCmd::Start(cmd) => cmd.override_config(config),
             //
